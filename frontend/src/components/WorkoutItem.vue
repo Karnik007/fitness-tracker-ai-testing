@@ -11,6 +11,7 @@
         <h4 class="workout-title">{{ workout.title }}</h4>
         <span class="workout-sub">{{ workout.activityType }} &bull; {{ workout.date }}</span>
       </div>
+    </div>
     <!-- BUG #7 (Intentional Compile-Time Vue Template Syntax Error):
          Missing closing </div> tag for .card-left!
          Vue template compiler raises: VueCompilerError: Element is missing end tag.

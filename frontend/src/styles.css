@@ -1,7 +1,7 @@
 /* ========================================================
    PulseFit — Design System & Stylesheet (Vue 3 Theme)
    Intentional Bugs:
-     - Bug #8: 'backgroud-color' typo in .intensity-high and missing unit
+     - Bug #8: 'background-color' typo in .intensity-high and missing unit
    ======================================================== */
 
 :root {
@@ -247,11 +247,11 @@ body {
     color: var(--orange-accent);
 }
 
-/* BUG #8 (Intentional CSS Typo): 'backgroud-color' instead of 'background-color' and missing unit */
+/* BUG #8 (Intentional CSS Typo): 'background-color' instead of 'background-color' and missing unit */
 .intensity-high {
-    backgroud-color: rgba(239, 68, 68, 0.2);
+    background-color: rgba(239, 68, 68, 0.2);
     color: var(--red-accent);
-    margin-left: 6;
+    margin-left: 6px;
 }
 
 /* Modal */

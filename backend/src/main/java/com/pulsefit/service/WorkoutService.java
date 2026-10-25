@@ -33,7 +33,7 @@ public class WorkoutService {
         // BUG #2 (Intentional Compile-Time Type Incompatibility):
         // Assigning a String literal to an int primitive variable!
         // javac compiler raises: error: incompatible types: String cannot be converted to int
-        int defaultCalories = "350";
+        int defaultCalories = 350;
 
         if (workout.getCaloriesBurned() <= 0) {
             workout.setCaloriesBurned(defaultCalories);
@@ -52,7 +52,9 @@ public class WorkoutService {
         // 'workout.getHeartRateZone()' is null on workout w-2 and w-4!
         // Invoking .toLowerCase() directly on a null reference throws NullPointerException at runtime.
         try {
-            return workout.getHeartRateZone().toLowerCase();
+            String zone = workout.getHeartRateZone();
+        if (zone == null) return "Unknown";
+        return zone.toLowerCase();
         } catch (NullPointerException npe) {
             System.err.println("[Runtime NullPointerException Bug #3 Triggered]: " + npe.getMessage());
             throw npe;
@@ -64,7 +66,7 @@ public class WorkoutService {
         // BUG #5 (Intentional Runtime ArrayIndexOutOfBoundsException):
         // Array has 7 items with valid indices 0 to 6. Accessing index 7 throws ArrayIndexOutOfBoundsException!
         try {
-            return days[7];
+            return days[0];
         } catch (ArrayIndexOutOfBoundsException oob) {
             System.err.println("[Runtime ArrayIndexOutOfBoundsException Bug #5 Triggered]: " + oob.getMessage());
             throw oob;

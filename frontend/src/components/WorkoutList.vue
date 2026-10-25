@@ -17,7 +17,7 @@
     -->
     <div class="workout-items-container">
       <div 
-        v-for="item in (workouts.filter(w => w.durationMinutes > 0))" 
+        v-for="item in (workouts ? workouts.filter(w => w.durationMinutes > 0) : [])" 
         :key="item.id"
       >
         <WorkoutItem :workout="item" />

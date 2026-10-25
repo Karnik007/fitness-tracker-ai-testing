@@ -80,7 +80,14 @@ onMounted(async () => {
 
 const totalCalories = computed(() => workouts.value.reduce((s, w) => s + w.caloriesBurned, 0))
 const totalMinutes = computed(() => workouts.value.reduce((s, w) => s + w.durationMinutes, 0))
-const avgIntensity = computed(() => 'High')
+const avgIntensity = computed(() => {
+  if (workouts.value.length === 0) return 'N/A'
+  const counts = {}
+  workouts.value.forEach(w => {
+    counts[w.intensity] = (counts[w.intensity] || 0) + 1
+  })
+  return Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b)
+})
 
 function handleNewWorkout(item) {
   workouts.value.unshift(item)

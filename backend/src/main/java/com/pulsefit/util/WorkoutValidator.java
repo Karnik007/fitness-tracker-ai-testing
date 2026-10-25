@@ -6,7 +6,7 @@ public class WorkoutValidator {
     // BUG #1 (Intentional Compile-Time SyntaxError):
     // Missing semicolon ';' at the end of the constant declaration!
     // javac compiler raises: error: ';' expected
-    public static final int MAX_DURATION_MINUTES = 360
+    public static final int MAX_DURATION_MINUTES = 360;
 
     public static boolean isValidWorkout(Workout workout) {
         if (workout == null) return false;

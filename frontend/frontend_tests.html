@@ -78,7 +78,11 @@
         }
 
         runBtn.addEventListener("click", execute);
-        document.addEventListener("DOMContentLoaded", execute);
+        if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", execute);
+} else {
+    execute();
+}
     </script>
 </body>
 </html>

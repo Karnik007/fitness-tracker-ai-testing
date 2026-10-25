@@ -18,7 +18,9 @@
            Clicking this button invokes 'triggerSyncWithCloud', which is never declared in <script setup>!
            Vue runtime raises: ReferenceError: triggerSyncWithCloud is not defined
       -->
-      <button class="btn btn-secondary" @click="triggerSyncWithCloud">
+      function triggerSyncWithCloud() {
+  // Implementation for cloud sync
+}
         ☁ Cloud Sync
       </button>
 

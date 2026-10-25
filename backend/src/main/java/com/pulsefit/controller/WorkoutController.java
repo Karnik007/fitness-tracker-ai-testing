@@ -50,7 +50,9 @@ public class WorkoutController {
             return ResponseEntity.ok(res);
         } catch (NumberFormatException nfe) {
             System.err.println("[Runtime NumberFormatException Bug #4 Triggered]: " + nfe.getMessage());
-            throw nfe;
+            Map<String, Object> errorRes = new HashMap<>();
+            errorRes.put("error", "Invalid duration format");
+            return ResponseEntity.badRequest().body(errorRes);
         }
     }
 
