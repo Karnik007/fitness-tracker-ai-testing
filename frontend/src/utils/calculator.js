@@ -1,13 +1,7 @@
 /**
  * PulseFit — Fitness Met & Calorie Calculation Helper
- * 
- * Intentional Compile-Time Syntax Error:
- *  - Bug #6: Typo 'const' instead of 'const'
  */
 
-// BUG #6 (Intentional Compile-Time Syntax Error):
-// Typo in keyword 'const' instead of 'const'.
-// V8/Babel parser raises: SyntaxError: Unexpected identifier 'MET_RUNNING_FACTOR'
 const MET_RUNNING_FACTOR = 9.8;
 export const MET_CYCLING_FACTOR = 7.5;
 export const MET_LIFTING_FACTOR = 6.0;
